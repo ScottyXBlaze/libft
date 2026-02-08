@@ -68,6 +68,8 @@ fclean: clean
 	$(RM) $(NAME)
 
 re: fclean all
+so:
+	$(CC) -nostartfiles -fPIC $(CFLAGS) $(SRC)
+	gcc -nostartfiles -shared -o libft.so $(OBJ)
 
-
-.phony:	all clean fclean re
+.phony:	all clean fclean re so
